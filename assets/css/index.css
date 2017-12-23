@@ -1,4 +1,4 @@
-#pointme {
+.btnstyle {
     background-color: rgb(67, 176, 223);
     color: white;
     padding: 16px;
@@ -10,10 +10,10 @@
 {
     position: relative;
     display: inline-block;
-    left:40%;
-    top:30%;
+    left:35%;
+    top:25%;
 }
-#pointme:hover , #pointme:focus
+.btnstyle:hover , .btnstyle:focus
 {
     background-color:#0b348b;
 }
@@ -33,6 +33,11 @@
     text-decoration: none;
     display: block;
 }
-
+#testframe
+{
+    position: absolute;
+    left:30%;
+    top:60%;
+}
 .dropdown-content a:hover {background-color: #f1f1f1}
 .show {display:block;}
