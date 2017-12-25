@@ -13,29 +13,21 @@
         clearTestcontent()
     }
 
-    document.getElementById("single").onclick = (()=>
-    {
-        moduleSwitch(type="single")
-    })
-    document.getElementById("strategy").onclick= (()=>
-    {
-        moduleSwitch(type="strategy")
-    })
+    document.getElementById("single").onclick = (()=>{moduleSwitch(type="single")})
+    document.getElementById("strategy").onclick= (()=>{moduleSwitch(type="strategy")})
+    document.getElementById("command").onclick= (()=>{moduleSwitch(type="command")})
 })()
 
-function objectCreate(element="div",html="obj")
+function objectCreate(element="div",html="obj",id="test")
 {
     var content =  document.createElement(element)
-    content.id="test"
+    content.id=id
     content.style.position = "relative"
-    // if(document.getElementById("test"))
-    // {
-        content.innerHTML=html
-    // }
+    content.innerHTML=html
     document.getElementById("testframe").appendChild(content)
     
     return content
-    // moduleswitch(type=type,obj = content)
+    
 }
 function moduleSwitch(type)
 {
@@ -48,12 +40,16 @@ function moduleSwitch(type)
         case "strategy":
             runStatement = useStrategy()
             break;
+        case "command":
+            runStatement = useCommand()
+            break;
         default:
             return false
     }
     console.log(runStatement)
 }
 function clearTestcontent()
-{
-    $("#testframe").empty()
+{   
+    // $("#testframe").empty()
+    location.reload()   
 }

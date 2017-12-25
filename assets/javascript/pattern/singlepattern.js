@@ -5,14 +5,14 @@ var useSingleton = (()=>
     var instance 
     function createInstance()
     {
-        var obj = objectCreate()
+        var obj = objectCreate("div","singleton")
         return obj
     }
-    return ()=>
-        {
-            if(!instance) instance = createInstance()
+    return ()=>{
+            if(typeof(instance)==="undefined") instance = createInstance()
             return instance 
         }
+        
     
 })()
 
