@@ -35,6 +35,11 @@ buildElement.prototype.execute = function(){this.obj = objectCreate(this.element
 buildElement.prototype.getObject = function(){return this.obj}
 buildElement.prototype.onClick = function(eltevent,type)
 {
+    this.obj.className="btnstyle"
+    this.obj.style.fontSize = "20px"
+    this.obj.style.background="#000f11"
+    this.obj.style.color="#aabb11"
+    this.obj.style.border = "solid #aaffFF"
     if(type==="execute")
     {
         this.obj.onclick = ()=>
@@ -52,16 +57,17 @@ buildElement.prototype.onClick = function(eltevent,type)
 
 var useCommand = ()=>
 {
-    
+    // 對象
     var bt1 = menuType.build("button","execute")
     var bt2 = menuType.build("button","undo")
     var obj = menuType.build("span","o","commandtest")
+    // client
     bt1.execute()
     bt2.execute()
     obj.execute()
+    // 取用
     var addelt = menuType.addElement(obj.getObject())
+    // 接收
     bt1.onClick(addelt,"execute")
     bt2.onClick(addelt,"undo")
-    
-    
 }

@@ -16,6 +16,7 @@
     document.getElementById("single").onclick = (()=>{moduleSwitch(type="single")})
     document.getElementById("strategy").onclick= (()=>{moduleSwitch(type="strategy")})
     document.getElementById("command").onclick= (()=>{moduleSwitch(type="command")})
+    document.getElementById("factory").onclick= (()=>{moduleSwitch(type="factory")})
 })()
 
 function objectCreate(element="div",html="obj",id="test")
@@ -43,6 +44,8 @@ function moduleSwitch(type)
         case "command":
             runStatement = useCommand()
             break;
+        case "factory":
+            runStatement = useFactory()
         default:
             return false
     }
