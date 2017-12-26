@@ -16,11 +16,24 @@ var clientValue = (value,element="")=>
     return element==="" ?objectCreate(element="span",html=value): objectCreate(element=element,html = name)
 }
 
+var strategy = (()=>
+{
+    return {
+        "onclick":(element)=>{element.onclick = ()=>{alert(element)}},
+        "color":(element,color)=>{element.style.color=color},
+        "size":(element,size)=>{element.style.fontSize=size}
+    }
+})()
+
 var useStrategy = ()=>
 {
-    // can input value
     var run = clientManage.name("Test1")
+    run = strategy.size(run,"30px")
+
     run = clientManage.value("sa")
+    run = strategy.color(run,"#111bcc")
+
     run = clientManage.name("我是按鈕!","button")
+    run = strategy.onclick(run)
     return run   
 }
